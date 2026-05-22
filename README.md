@@ -1,16 +1,43 @@
-# React + Vite
+# like_lion_lawyer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+법무부 공공데이터 **마을변호사·마을담당공무원 지역별 배정현황** 조회 앱입니다.
 
-Currently, two official plugins are available:
+<img width="1920" height="1243" alt="스크린샷 2026-05-22 오후 2 54 24" src="https://github.com/user-attachments/assets/41ac5c49-9334-4696-a572-d77e6a5f8880" />
+<img width="1920" height="1243" alt="스크린샷 2026-05-22 오후 2 54 16" src="https://github.com/user-attachments/assets/9b9395b1-03ca-41bd-b946-edc147203bda" />
+<img width="1920" height="1243" alt="스크린샷 2026-05-22 오후 2 54 05" src="https://github.com/user-attachments/assets/71a00691-428a-4126-b546-10cb62144703" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 기능
 
-## React Compiler
+- 마을변호사 지역별 배정현황 조회
+- 시·도 / 지역명 / 변호사·공무원명 검색
+- 배정 상세 정보 (위촉지역, 마을변호사, 담당공무원)
+- API 테스트 페이지 (XML 응답 확인)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 기술 스택
 
-## Expanding the ESLint configuration
+- React + Vite
+- Tailwind CSS
+- Axios / Fetch
+- fast-xml-parser
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 실행 방법
+
+```bash
+npm install
+```
+
+`.env` 파일 생성 (공공데이터포털 인증키):
+
+```env
+VITE_API_URL=/api/moj
+VITE_API_KEY=발급받은_디코딩_키
+```
+
+```bash
+npm run dev
+```
+
+## API
+
+- [법무부_마을변호사 지역별 현황](https://www.data.go.kr/data/15121954/openapi.do)
+- Endpoint: `https://apis.data.go.kr/1270000/mojmabyun/mabyun`
